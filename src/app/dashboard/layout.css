@@ -131,6 +131,19 @@ h1, h2, h3, .brand {
   justify-content: space-between;
   z-index: 50;
 }
+.hamburger {
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  transition: background .2s;
+}
+.hamburger:hover { background: rgba(255,255,255,0.05); }
+
 .topbar-left { display: flex; align-items: center; gap: 16px; }
 .topbar-actions { display: flex; gap: 12px; align-items: center; }
 
