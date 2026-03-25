@@ -16,6 +16,11 @@
   --radius: 14px;
 }
 
+/* ─── FONT FIX ─── */
+h1, h2, h3, .brand {
+  font-variant-ligatures: none;
+}
+
 .main-wrapper {
   display: flex;
   min-height: 100vh;
@@ -218,10 +223,15 @@
 
 .mat-hero h1 {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-size: clamp(2rem, 4vw, 3.2rem);
   color: var(--white);
-  margin-bottom: 12px;
-  line-height: 1.15;
+  margin-bottom: 16px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.mat-hero-inner {
+  max-width: 800px;
 }
 
 .mat-intro {
