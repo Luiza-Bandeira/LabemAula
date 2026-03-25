@@ -23,11 +23,11 @@ export default function MaterialView({ material, isLocked }: MaterialViewProps) 
   };
 
   const tabs = [
-    { id: 'materiais', label: '1 Materiais' },
-    { id: 'procedimento', label: '2 Procedimento' },
-    { id: 'relatorio', label: '3 Relatório' },
-    { id: 'analise', label: '4 Análise' },
-    { id: 'conclusao', label: '5 Conclusão' },
+    { id: 'materiais', label: 'Materiais', num: '1' },
+    { id: 'procedimento', label: 'Procedimento', num: '2' },
+    { id: 'relatorio', label: 'Relatório', num: '3' },
+    { id: 'analise', label: 'Análise', num: '4' },
+    { id: 'conclusao', label: 'Conclusão', num: '5' },
   ];
 
   if (isLocked) {
@@ -81,6 +81,7 @@ export default function MaterialView({ material, isLocked }: MaterialViewProps) 
             className={`mat-tab ${activeTab === tab.id ? 'active' : ''}`}
             onClick={() => setActiveTab(tab.id)}
           >
+            <span className="tab-num">{tab.num}</span>
             {tab.label}
           </div>
         ))}
@@ -88,17 +89,17 @@ export default function MaterialView({ material, isLocked }: MaterialViewProps) 
 
       <div className="tab-content active">
         {activeTab === 'materiais' && (
-          <>
-            <div className="mat-list-title">Lista de Materiais</div>
+          <div className="tab-inner-centered">
+            <h2 className="mat-list-title">Lista de Materiais</h2>
             <p className="mat-checklist-tip">☑ Clique nos itens para marcar como separado</p>
-            <div className="mat-list">
+            <div className="mat-grid">
               {material.materials.map((item, i) => (
                 <div 
                   key={i} 
-                  className={`mat-item ${checklist[item] ? 'checked' : ''}`}
+                  className={`mat-grid-item ${checklist[item] ? 'checked' : ''}`}
                   onClick={() => toggleCheck(item)}
                 >
-                  <div className="mat-check"></div>
+                  <div className="mat-check-circle"></div>
                   <span className="mat-item-name">{item}</span>
                 </div>
               ))}
@@ -109,11 +110,11 @@ export default function MaterialView({ material, isLocked }: MaterialViewProps) 
                 <div>{callout.text}</div>
               </div>
             ))}
-          </>
+          </div>
         )}
 
         {activeTab === 'procedimento' && (
-          <>
+          <div className="tab-inner-centered">
             <Timer id={material.id} />
             <div className="steps">
               {material.steps.map((step, i) => (
@@ -133,11 +134,11 @@ export default function MaterialView({ material, isLocked }: MaterialViewProps) 
                 </div>
               ))}
             </div>
-          </>
+          </div>
         )}
 
         {activeTab === 'relatorio' && (
-          <>
+          <div className="tab-inner-centered">
             <div className="report-section">
               <div className="report-label">📝 O que aconteceu em cada etapa?</div>
               <textarea className="report-input" rows={4} placeholder="Descreva suas observações..."></textarea>
@@ -165,11 +166,11 @@ export default function MaterialView({ material, isLocked }: MaterialViewProps) 
                 </table>
               </React.Fragment>
             ))}
-          </>
+          </div>
         )}
 
         {activeTab === 'analise' && (
-          <>
+          <div className="tab-inner-centered">
             <div className="report-section">
               <div className="report-label">📊 Análise dos Resultados</div>
               <textarea className="report-input" rows={4} placeholder="Como você interpreta o que aconteceu?"></textarea>
@@ -178,11 +179,11 @@ export default function MaterialView({ material, isLocked }: MaterialViewProps) 
               <div className="report-label">⚠️ Fontes de Erro</div>
               <textarea className="report-input" rows={3} placeholder="O que pode ter afetado a precisão?"></textarea>
             </div>
-          </>
+          </div>
         )}
 
         {activeTab === 'conclusao' && (
-          <>
+          <div className="tab-inner-centered">
             {material.equationBoxes?.map((box, i) => (
               <React.Fragment key={i}>
                 <div className="sec-divider"><span className="sec-divider-line"></span><span className="sec-divider-label">Equação</span><span className="sec-divider-line"></span></div>
@@ -205,7 +206,7 @@ export default function MaterialView({ material, isLocked }: MaterialViewProps) 
                 </div>
               ))}
             </div>
-          </>
+          </div>
         )}
       </div>
     </div>
