@@ -9,8 +9,6 @@ import { materials } from '@/data/materials';
 
 export default function Dashboard() {
   const [currentId, setCurrentId] = useState<string | null>(null);
-  // Simulation: Plan should come from Auth/Cookies
-  const [userPlan, setUserPlan] = useState<'avulso' | 'kit' | 'escola'>('avulso');
 
   const selectedMaterial = materials.find(m => m.id === currentId);
 
@@ -30,13 +28,6 @@ export default function Dashboard() {
             <div className="dash-header">
               <h1>Roteiros de Aula Prática</h1>
               <p>Selecione um roteiro para começar · {materials.length} atividades investigativas completas</p>
-              
-              <div style={{ marginTop: '20px', display: 'flex', gap: '12px', alignItems: 'center' }}>
-                <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Simular Plano:</span>
-                <button onClick={() => setUserPlan('avulso')} className={`btn-sm ${userPlan === 'avulso' ? 'btn-teal' : 'btn-outline'}`}>Modulo Avulso</button>
-                <button onClick={() => setUserPlan('kit')} className={`btn-sm ${userPlan === 'kit' ? 'btn-teal' : 'btn-outline'}`}>Kit Completo ✨</button>
-                <button onClick={() => setUserPlan('escola')} className={`btn-sm ${userPlan === 'escola' ? 'btn-teal' : 'btn-outline'}`}>Licença Escola 🏫</button>
-              </div>
             </div>
 
             <div className="modules-grid">
@@ -53,7 +44,7 @@ export default function Dashboard() {
           selectedMaterial && (
             <MaterialView 
               material={selectedMaterial} 
-              userPlan={userPlan} 
+              isLocked={false} 
             />
           )
         )}
