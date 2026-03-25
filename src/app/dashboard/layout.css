@@ -132,6 +132,37 @@ h1, h2, h3, .brand {
   z-index: 50;
 }
 .topbar-left { display: flex; align-items: center; gap: 16px; }
+.topbar-actions { display: flex; gap: 12px; align-items: center; }
+
+.btn-sm {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-outline {
+  background: rgba(255,255,255,0.03);
+  border-color: var(--border);
+  color: rgba(255,255,255,0.7);
+}
+.btn-outline:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.2);
+  color: var(--white);
+}
+.btn-teal {
+  background: var(--teal-dash);
+  color: var(--white);
+}
+.btn-teal:hover {
+  background: var(--teal2);
+}
 .breadcrumb {
   display: flex; align-items: center; gap: 8px;
   font-size: .82rem; color: rgba(255,255,255,.4);
