@@ -197,7 +197,7 @@ export default function Home() {
                 <li>Gabarito de análise e conclusão</li>
                 <li>Download imediato</li>
               </ul>
-              <Link href="https://pay.hotmart.com/I104619180M?off=avulso" className="btn-plano">Comprar módulo</Link>
+              <Link href="/dashboard" className="btn-plano">Acessar este módulo</Link>
             </div>
 
             <div className="plano destaque">
@@ -212,7 +212,7 @@ export default function Home() {
                 <li>Atualizações futuras grátis</li>
                 <li>Download imediato</li>
               </ul>
-              <Link href="https://pay.hotmart.com/I104619180M?off=completo" className="btn-plano">Garantir meu kit</Link>
+              <Link href="/dashboard" className="btn-plano">Garantir meu kit</Link>
             </div>
 
             <div className="plano">
@@ -226,7 +226,7 @@ export default function Home() {
                 <li>Suporte via WhatsApp</li>
                 <li>Nota fiscal disponível</li>
               </ul>
-              <Link href="https://pay.hotmart.com/I104619180M?off=escola" className="btn-plano">Falar sobre a escola</Link>
+              <Link href="/dashboard" className="btn-plano">Acessar licença escola</Link>
             </div>
           </div>
         </div>
