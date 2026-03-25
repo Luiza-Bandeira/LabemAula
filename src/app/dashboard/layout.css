@@ -1,0 +1,11 @@
+.main-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Specific overrides for the Dashboard layout */
+@media (max-width: 820px) {
+  .main-wrapper {
+    flex-direction: column;
+  }
+}
